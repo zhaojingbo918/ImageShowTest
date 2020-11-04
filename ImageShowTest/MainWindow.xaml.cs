@@ -28,14 +28,20 @@ namespace ImageShowTest
             InitializeComponent();
 
 
-            m_Timer = new DispatcherTimer() { Interval = TimeSpan.FromMilliseconds(5) };
-            m_Timer.Tick += M_Timer_Tick;
-            m_Timer.Start();
+            //m_Timer = new DispatcherTimer() { Interval = TimeSpan.FromMilliseconds(5) };
+            //m_Timer.Tick += M_Timer_Tick;
+            //m_Timer.Start();
         }
 
         private void M_Timer_Tick(object sender, EventArgs e)
         {
-            this.image.Source = imageBuilder.CreateImage();
+            //this.image.Source = imageBuilder.CreateImage();
+        }
+
+        private void SliderY_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            this.image.Source = imageBuilder.CreateImage((int)this.sliderX.Value, (int)this.sliderY.Value);
+
         }
     }
 }

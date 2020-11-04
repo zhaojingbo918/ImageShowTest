@@ -9,11 +9,34 @@
         Height="450"
         Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
         <Grid Width="150"
               Height="150">
             <Rectangle Fill="Gray" />
             <Image x:Name="image"
                    Stretch="None" />
         </Grid>
+        <StackPanel Grid.Row="1"
+                    HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="X:" />
+                <Slider x:Name="sliderX"
+                        Width="200"
+                        Minimum="0"
+                        Maximum="150"
+                        ValueChanged="SliderY_OnValueChanged" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Y:" />
+                <Slider x:Name="sliderY"
+                        Width="200"
+                        Minimum="0"
+                        Maximum="150"
+                        ValueChanged="SliderY_OnValueChanged" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

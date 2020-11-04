@@ -20,10 +20,9 @@ namespace ImageShowTest
         static extern int DeleteObject(IntPtr o);
         /// <summary>
         /// 创建有线图标
-        /// </summary>
-        /// <param name="yxmodel"></param>
+        /// </summary> 
         /// <returns></returns>
-        public ImageSource CreateImage()
+        public ImageSource CreateImage(int x, int y)
         {
             Bitmap bmp = new Bitmap(150, 150);
             Graphics graphics = Graphics.FromImage(bmp);
@@ -35,9 +34,10 @@ namespace ImageShowTest
 
             System.Drawing.Pen pen = new System.Drawing.Pen(System.Drawing.Brushes.Red);
 
-            for (int i = 0; i < 600; i++)
+
             {
-                graphics.DrawRectangle(pen, new Rectangle(random.Next(150), random.Next(150), 1, 1));
+                //graphics.DrawRectangle(pen, new Rectangle(x, y, 5, 5));
+                graphics.FillRectangle(System.Drawing.Brushes.Red, new Rectangle(x, y, 5, 5));
             }
 
 
